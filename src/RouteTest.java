@@ -4,11 +4,11 @@
  * @author Gabriel Iuriciuc
  *
  */
-public class Route{
+public class RouteTest{
 	
 	public static void main(String[] args) {
-		LineFollowTest lineFollower = new LineFollowTest();
-		// Constructed an imaginary route to test
+		LineFollower lineFollower = new LineFollower();
+		// Constructed an route for the given map to test the robot
 			lineFollower.moveAction(4);
 			lineFollower.turnAction(90);
 			lineFollower.moveAction(5);
