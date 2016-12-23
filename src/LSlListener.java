@@ -1,18 +1,18 @@
 
 import lejos.nxt.LightSensor;
 
-/**Class that simulates the real listener
+/**Class that given a robot reads the light values from the 2 light sensors
  * @author Gabriel Iuriciuc
  *
  */
-public class LSlListenerTest extends Thread {
+public class LSlListener extends Thread {
 
-	private LineFollowTest robotUnit;
+	private LineFollower robotUnit;
 	private LightSensor right;
 	private LightSensor left;
-	public static boolean stop = true;
+	public static boolean stop = false;
 
-	public LSlListenerTest(LineFollowTest robotUnit, LightSensor right, LightSensor left) {
+	public LSlListener(LineFollower robotUnit, LightSensor right, LightSensor left) {
 		this.robotUnit = robotUnit;
 		this.right = right;
 		this.left = left;
@@ -22,7 +22,7 @@ public class LSlListenerTest extends Thread {
 	public void run() {
 		int rightlightValue;
 		int leftlightValue;
-		while(stop) {
+		while(!stop) {
 			rightlightValue = right.getLightValue();
 			leftlightValue = left.getLightValue();
 			robotUnit.leftSensorValue = leftlightValue;
