@@ -7,7 +7,7 @@ import lejos.robotics.navigation.DifferentialPilot;
 import lejos.util.Delay;
 
 /**
- * Class used for moving the robot on the map.
+ * Class used for moving and turning the robot on the map.
  * 
  * @author Gabriel Iuriciuc
  *
